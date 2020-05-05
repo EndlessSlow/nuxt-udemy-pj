@@ -3,18 +3,21 @@
     <section class="post-list">
       <PostPreview
         id="1"
+        :is-admin="isAdmin"
         thumbnail="https://cdn.wallpapersafari.com/97/84/FojnuC.jpg"
         title="Heelo there!"
         previewText="this my first posts"
       />
       <PostPreview
         id="2"
+        :is-admin="isAdmin"
         thumbnail="https://cdn.wallpapersafari.com/97/84/FojnuC.jpg"
         title="Heelo there!2"
         previewText="this my first posts"
       />
       <PostPreview
         id="3"
+        :is-admin="isAdmin"
         thumbnail="https://cdn.wallpapersafari.com/97/84/FojnuC.jpg"
         title="Heelo there!3"
         previewText="this my first posts"
@@ -29,6 +32,12 @@ export default {
   name: 'PostList',
   components: {
     PostPreview
+  },
+  props: {
+    isAdmin: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>
