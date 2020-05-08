@@ -1,17 +1,16 @@
 <template>
   <div>
     <TheHeader @sidenavToggle="displaySidenav = !displaySidenav" />
-    <TheSidenav 
-      :show="displaySidenav" 
-      @close="displaySidenav = false" 
-    />
+    <TheSidenav
+      :show="displaySidenav"
+      @close="displaySidenav = false" />
     <nuxt />
   </div>
 </template>
 
 <script>
-import TheHeader from '@/components/Navigation/TheHeader'
-import TheSidenav from '@/components/Navigation/TheSidenav'
+import TheHeader from '@/components/Navigation/TheHeader.vue'
+import TheSidenav from '@/components/Navigation/TheSidenav.vue'
 export default {
   components: {
     TheHeader,

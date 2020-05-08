@@ -3,18 +3,122 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList.vue'
+import PostList from '@/components/Posts/PostList.vue';
 
 export default {
   components: {
     PostList
+  },
+  // asyncData(context, callback) {
+  //   setTimeout(() => {
+  //     callback(null, {
+  //       loadedPosts: [
+  //         {
+  //           id: '1',
+  //           title: 'First Post - 1',
+  //           previewText: 'This is our first post!!',
+  //           thumbnail: 'none'
+  //         },
+  //         {
+  //           id: '2',
+  //           title: 'First Post - 2',
+  //           previewText: 'This is our first post!!',
+  //           thumbnail: 'none'
+  //         },
+  //         {
+  //           id: '3',
+  //           title: 'First Post - 3',
+  //           previewText: 'This is our first post!!',
+  //           thumbnail: 'none'
+  //         },
+  //         {
+  //           id: '4',
+  //           title: 'First Post - 4',
+  //           previewText: 'This is our first post!!',
+  //           thumbnail: 'none'
+  //         },
+  //         {
+  //           id: '5',
+  //           title: 'First Post - 5',
+  //           previewText: 'This is our first post!!',
+  //           thumbnail: 'none'
+  //         },
+  //         {
+  //           id: '6',
+  //           title: 'First Post - 6',
+  //           previewText: 'This is our first post!!',
+  //           thumbnail: 'none'
+  //         }
+  //       ]
+  //     })
+  //   }, 1500)
+  // },
+
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   }
+  // },
+  // async asyncData(context, callback) {
+  //   const data = await new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve('')
+  //     }, 1500)
+  //   })
+  //   return {
+  //     loadedPosts: [
+  //       {
+  //         id: '1',
+  //         title: 'First Post - 1',
+  //         previewText: 'This is our first post!!',
+  //         thumbnail: 'none'
+  //       },
+  //       {
+  //         id: '2',
+  //         title: 'First Post - 2',
+  //         previewText: 'This is our first post!!',
+  //         thumbnail: 'none'
+  //       },
+  //       {
+  //         id: '3',
+  //         title: 'First Post - 3',
+  //         previewText: 'This is our first post!!',
+  //         thumbnail: 'none'
+  //       },
+  //       {
+  //         id: '4',
+  //         title: 'First Post - 4',
+  //         previewText: 'This is our first post!!',
+  //         thumbnail: 'none'
+  //       },
+  //       {
+  //         id: '5',
+  //         title: 'First Post - 5',
+  //         previewText: 'This is our first post!!',
+  //         thumbnail: 'none'
+  //       },
+  //       {
+  //         id: '6',
+  //         title: 'First Post - 6',
+  //         previewText: 'This is our first post!!',
+  //         thumbnail: 'none'
+  //       }
+  //     ]
+  //   }
+  // },
+  // created() {}
+
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    }
   }
-}
+};
 </script>
 
 <style scoped>

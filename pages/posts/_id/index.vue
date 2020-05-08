@@ -10,11 +10,30 @@
       <p class="post-content">Content of the post</p>
     </section>
     <section class="post-feedback">
-      <p>Fucking Vue Typescript </p>
-
+      <p>Fucking Vue Typescript</p>
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: {
+          id: '1',
+          title: 'First Post - (ID: ' + context.route.params.id + ')',
+          previewText: 'This is our first post!!',
+          author: 'Lee',
+          updatedDate: new Date(),
+          content: 'Some dummy text',
+          thumbnail: 'none'
+        }
+      })
+    }, 1500)
+  }
+}
+</script>
 
 <style scoped>
 .single-post-page {
